@@ -1,6 +1,6 @@
 ## SolarEdge Inverter REST API
 
-Super simple REST api to Solaredge Inverter, based on [solaredge_modbus](https://github.com/nmakel/solaredge_modbus) project and Flask. It is using MODBUS over TCP. Information how to turn on MODBUS over TCP in your Inverter can be found on solaredge documentation page or in included [PDF](https://github.com/benzino77/solaredge-rest-api/documents/sunspec-implementation-technical-note.pdf)
+Super simple REST api to Solaredge Inverter, based on [solaredge_modbus](https://github.com/nmakel/solaredge_modbus) project and Flask. It is using MODBUS over TCP. Information how to turn on MODBUS over TCP in your Inverter can be found on solaredge documentation page or in included [PDF](https://github.com/benzino77/solaredge-rest-api/blob/main/documents/sunspec-implementation-technical-note.pdf)
 
 ### Usage
 The  api endpoint is `/api/v1/solaredge` and it is reachable by simple GET request:
