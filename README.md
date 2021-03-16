@@ -11,7 +11,7 @@ The  api endpoint is `/api/v1/solaredge` and it is reachable by simple GET reque
 ### Install
 
 ### Docker
-The simplest way to start it is by usinf docker:
+The simplest way to start it is by using docker:
 
 `docker run --rm -p 8080:8080 -e MODBUS_HOST=<ip_address_of_modbus_inverter_interface> -e MODBUS_PORT=<modbus_inverter_interface_port> benzino77/solaredge-rest-api`
 
