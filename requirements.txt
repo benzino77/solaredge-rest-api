@@ -9,6 +9,6 @@ pycodestyle==2.7.0
 pymodbus==2.5.0
 pyserial==3.5
 six==1.15.0
-solaredge-modbus==0.6.5
+solaredge-modbus==0.7.0
 toml==0.10.2
 Werkzeug==1.0.1
