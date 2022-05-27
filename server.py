@@ -7,9 +7,11 @@ from flask import Flask, jsonify, request
 inverter = solaredge_modbus.Inverter(
     host=getenv('MODBUS_HOST'),
     port=getenv('MODBUS_PORT'),
-    timeout=1,
+    timeout=5,
     unit=1
 )
+
+
 error_message = {'succes': False, 'data': {'error': 'Not allowed.'}}
 
 app = Flask(__name__)
@@ -21,9 +23,17 @@ def metrics_api():
         return jsonify(error_message), 405
 
     values = {}
-    values = inverter.read_all()
-    meters = inverter.meters()
-    batteries = inverter.batteries()
+    
+    num_of_tries = 5
+    while num_of_tries > 0:
+        try:
+            values = inverter.read_all()
+            meters = inverter.meters()
+            batteries = inverter.batteries()
+            break
+        except Exception as e:
+            print('Something went wrong: {e}')
+
     values['meters'] = {}
     values['batteries'] = {}
 
